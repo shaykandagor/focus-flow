@@ -1,16 +1,21 @@
-import { Text } from "@chakra-ui/react";
+import { SimpleGrid, Text } from "@chakra-ui/react";
 import useHabits from "../hooks/useHabits";
+import HabitCard from "./HabitCard";
 
 const HabitGrid = () => {
   const { habits, error } = useHabits();
   return (
     <>
       {error && <Text>{error}</Text>}
-      <ul>
+      <SimpleGrid
+        columns={{ base: 1, md: 2, lg: 3, xl: 4 }}
+        padding="10px"
+        gap="6"
+      >
         {habits.map((habit) => (
-          <li key={habit.id}>{habit.name}</li>
+          <HabitCard key={habit.id} habit={habit} />
         ))}
-      </ul>
+      </SimpleGrid>
     </>
   );
 };

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
-import { h } from "framer-motion/dist/types.d-DsEeKk6G";
 import { CanceledError } from "axios";
 
-interface Habit {
+export interface Habit {
   id: number;
   name: string;
+  start_date: string;
+  time_of_day: string;
+  remind: string
 }
 
 interface FetchHabitsResponse {
