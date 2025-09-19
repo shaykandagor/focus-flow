@@ -1,5 +1,6 @@
 import { Grid, GridItem, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
+import HabitGrid from "./components/HabitGrid";
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
       <GridItem area="aside" display={{ base: "none", lg: "block" }}>
         Aside
       </GridItem>
-      <GridItem area="main">Main</GridItem>
+      <GridItem area="main">
+        <HabitGrid />
+      </GridItem>
     </Grid>
   );
 }
